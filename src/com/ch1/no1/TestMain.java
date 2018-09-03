@@ -52,7 +52,7 @@ public class TestMain {
 			System.out.println(phoneNo);
 		
 		
-		// cf. 선착순과 가나다순 조합
+		// cf. 선착순과 가나다순을 조합하면?
 		Comparator<Data> nameCmp = new Comparator<Data>() {
 			public int compare(Data d1, Data d2) {
 				return (d1.getName().compareTo(d2.getName()));
