@@ -5,26 +5,29 @@ package com.ch1.no2;
  */
 public class TestMain {
     public static void main(String[] args) {
-        OneWayList oneWayList = new OneWayList();
-        oneWayList.printNodes();
+        LinkedList linkedList = new LinkedList();
+        linkedList.printNodes();
 
-        oneWayList.addNode("Hello, ");
-        oneWayList.addNode("Node!");
-        oneWayList.printNodes();
+        linkedList.addNode("Hello, ");
+        linkedList.addNode("Node!");
+        linkedList.printNodes();
 
-        oneWayList.deleteNode();
-        oneWayList.deleteNode();
-        oneWayList.deleteNode();
-        oneWayList.deleteNode();
-        oneWayList.deleteNode();
-        oneWayList.printNodes();
+        linkedList.deleteNode();
+        linkedList.deleteNode();
+        linkedList.deleteNode();
+        linkedList.deleteNode();
+        linkedList.deleteNode();
+        linkedList.printNodes();
 
         //You're gonna see me in a new light
-        oneWayList.addNode("You're");
-        oneWayList.addNode("gonna");
-        oneWayList.addNode("see me in");
-        oneWayList.addNode("new light");
-        oneWayList.addNode(3, "a");
-        oneWayList.printNodes();
+        linkedList.addNode("You're");
+        linkedList.addNode("gonna");
+        linkedList.addNode("see me in");
+        linkedList.addNode("new light");
+        linkedList.addNode(3, "a");
+        linkedList.printNodes();
+
+        linkedList.deleteNode(2);
+        linkedList.printNodes();
     }
 }

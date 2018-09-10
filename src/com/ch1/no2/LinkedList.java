@@ -3,12 +3,12 @@ package com.ch1.no2;
 /**
  * Created by BossNam on 2018. 9. 5..
  */
-public class OneWayList {
+public class LinkedList {
 
     private Node rootNode;
     private int size;
 
-    public OneWayList() {
+    public LinkedList() {
         rootNode = new Node("first node");
         size = 1;
     }
@@ -68,16 +68,48 @@ public class OneWayList {
             return true;
         } else {
             Node node = this.rootNode;
-            Node targetNode = null;
+            Node prevNode = null;
             while (isNextNodeExists(node)) {
                 if(isNextNodeExists(node.getNextNode()))
                     node = node.getNextNode();
                 else {
-                    targetNode = node;
+                    prevNode = node;
                     break;
                 }
             }
-            targetNode.setNextNode(null);
+            prevNode.setNextNode(null);
+            size--;
+            return true;
+        }
+    }
+
+    public boolean deleteNode(int index) {
+        if(size == 0 || index < 0 || index >= size) {
+            return false;
+
+        } else if(size == 1 && index == 0) {
+            rootNode = null;
+            size--;
+            return true;
+
+        } else if(index == 0) {
+            Node node = this.rootNode.getNextNode();
+            this.rootNode = node;
+            size--;
+            return true;
+
+        }  else if(index == size - 1 ) {
+            return this.deleteNode();
+
+        } else {
+            Node prevNode = this.rootNode;
+            for(int i=0; i<index-1; i++) {
+                prevNode = prevNode.getNextNode();
+            }
+            Node targetNode = prevNode.getNextNode();
+            Node nextNode = null;
+            nextNode = targetNode.getNextNode();
+            prevNode.setNextNode(nextNode);
             size--;
             return true;
         }
