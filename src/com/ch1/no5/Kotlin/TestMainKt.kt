@@ -1,10 +1,13 @@
 package com.ch1.no5
 
+import com.ch1.no5.Kotlin.CirculaQueueKt
+import com.ch1.no5.Kotlin.LinearQueueKt
+
 object TestMainKt {
     @JvmStatic
     fun main(args: Array<String>) {
         println("============== Linear Queue ==============")
-        val linearQueue = LinearQueue(5)
+        val linearQueue = LinearQueueKt(5)
         linearQueue.displayQueue() // 큐가 비어있습니다.
         println()
 
@@ -42,7 +45,7 @@ object TestMainKt {
 
 
         println("============== Circular Queue ==============")
-        val circulaQueue = CirculaQueue(5)
+        val circulaQueue = CirculaQueueKt(5)
         circulaQueue.displayQueue() // 큐가 비어있습니다.
         println()
 
